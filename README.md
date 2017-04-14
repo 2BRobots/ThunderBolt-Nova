@@ -1,7 +1,8 @@
 # ThunderBolt-Nova
 Here can be found all the resources to build your own ThunderBolt development board. This board is based on the PIC18F14K50 microcontroller. It uses a bootloader so you can program it directly over USB without an ICSP programer. 
+If you decide to make your own board you will need to burn the bootloader the firts time. You can use the 12Mhz or 48Mhz version, the hardware is the same for both versions.
 
-
+![alt tag](https://github.com/DAFRELECTRONICS/ThunderBolt-Nova/blob/master/thunder.jpg?raw=true)
 
 In this repositiry are all resources, examples and design files thta will allow you tu use all features of the board.
 

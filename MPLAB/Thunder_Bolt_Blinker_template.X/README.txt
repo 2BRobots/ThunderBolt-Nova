@@ -1,0 +1,1 @@
+Agradecimientos especiales a Leopoldo De Silva Ortiz por enviar la plantilla para hacer un proyecto con ThunderBolt Nova en MPLAB. 

@@ -1,0 +1,23 @@
+program blink
+
+' Declarations section 
+
+main:
+org 0x1000
+orgall(0x1000)
+
+TRISB.7 = 0
+
+
+
+loop:
+PORTB.7 = 1
+delay_ms(1000)
+PORTB.7 = 0
+delay_ms(1000)
+
+if porta.3 = 0 then
+asm goto 0x30 end asm
+end if
+goto loop
+end.

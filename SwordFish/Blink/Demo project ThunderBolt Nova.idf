@@ -1,0 +1,104 @@
+.header
+   .version $00010000
+   .compiler swordfish
+   .flags $0003
+   .target generic
+   .device 18F14K50 $0000
+   .clock 48000000
+   .ram_used $0019
+   .ram_total $0300
+   .access_start $0F53
+   .access_total $0060
+.end
+
+.file
+   000 C:\Users\David Fernandez\Documents\SwordfishSE\Demo project ThunderBolt Nova.bas
+   001 C:\ProgramData\Mecanique\SwordfishSE\Includes\18F14K50.BAS
+   002 C:\Users\David Fernandez\Documents\SwordfishSE\Demo project ThunderBolt Nova.bas
+.end
+
+.config $300000 $00 $32 $32 $1E
+.config $300005 $00 $81
+.config $300008 $03 $C0 $03 $E0 $03 $40
+
+.rom.module 002 system_000
+   $00001000 $EF2B | 00000
+   $00001002 $F008 | 00000
+.end
+
+.rom.module 002 system_001
+   $00001008 $EF04 | 00000
+   $0000100A $F008 | 00000
+.end
+
+.rom.module 002 system_002
+   $00001018 $EF0C | 00000
+   $0000101A $F008 | 00000
+   $0000101C $6A05 | 00000
+   $0000101E $6E04 | 00000
+   $00001020 $0EFF | 00000
+   $00001022 $2604 | 00000
+   $00001024 $A0D8 | 00000
+   $00001026 $2605 | 00000
+   $00001028 $0000 | 00000
+   $0000102A $A0D8 | 00000
+   $0000102C $0012 | 00000
+   $0000102E $0E03 | 00000
+   $00001030 $6E01 | 00000
+   $00001032 $0EE7 | 00000
+   $00001034 $D802 | 00000
+   $00001036 $D7F4 | 00000
+   $00001038 $6A01 | 00000
+   $0000103A $0FFD | 00000
+   $0000103C $6E00 | 00000
+   $0000103E $0EFF | 00000
+   $00001040 $D000 | 00000
+   $00001042 $D001 | 00000
+   $00001044 $2600 | 00000
+   $00001046 $0000 | 00000
+   $00001048 $D000 | 00000
+   $0000104A $D000 | 00000
+   $0000104C $A0D8 | 00000
+   $0000104E $2601 | 00000
+   $00001050 $A0D8 | 00000
+   $00001052 $0012 | 00000
+   $00001054 $D7F7 | 00000
+   $00001056 $8C18 | 00000
+.end
+
+.rom.module 002 system_003
+   $00001078 $0003 | 00000
+   $0000107A $D7FE | 00000
+.end
+
+.rom.module.main 000 MAIN
+   $00001058 $9E93 | 00044 
+   $0000105A $8E8A | 00047 
+   $0000105C $0E01 | 00048 
+   $0000105E $6E05 | 00048 
+   $00001060 $0EF4 | 00048 
+   $00001062 $DFDD | 00048 
+   $00001064 $9E8A | 00049 
+   $00001066 $0E01 | 00050 
+   $00001068 $6E05 | 00050 
+   $0000106A $0EF4 | 00050 
+   $0000106C $DFD8 | 00050 
+   $0000106E $B680 | 00052 
+   $00001070 $D002 | 00052 
+   $00001072 $EF18 | 00053 
+   $00001074 $F000 | 00053 
+   $00001076 $D7F1 | 00058 
+.end
+
+.module 001 SystemTypes
+   .var PUB $0F93 00 0000 0000 U08    TRISB
+   .var PUB $0F81 00 0000 0000 U08    PORTB
+   .var PUB $0F80 00 0000 0000 U08    PORTA
+.eom
+
+.module 000 Main
+   .import 001 SystemTypes
+.eom
+
+.module 002 .system
+.eom

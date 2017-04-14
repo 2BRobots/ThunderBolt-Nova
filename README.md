@@ -4,7 +4,7 @@ If you decide to make your own board you will need to burn the bootloader the fi
 
 ![alt tag](https://github.com/DAFRELECTRONICS/ThunderBolt-Nova/blob/master/thunder.jpg?raw=true)
 
-In this repositiry are all resources, examples and design files thta will allow you tu use all features of the board.
+In this repositiry are all resources, examples and design files that will allow you to use all features of the board.
 
 Here is a video of how to get started:
 
@@ -15,4 +15,8 @@ Hope you find it useful and can make a lot of projects with it.
 
 2B Robots (DAFR Electronics) invests time and resources providing this open source code and hardware, if you valorate our hard work please purchase our products and support us to continue creating more open source products!!!
 
+Hardware licensed with Creative Commons BY-NC-SA.
+
 Created by Daniel A. Fernandez Raygoza for 2B Robots.
+
+Visit our online store: www.2brobots.com

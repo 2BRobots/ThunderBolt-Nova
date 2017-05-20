@@ -1,0 +1,13 @@
+0	1	mBPic.exe -MSF -DBG -pP18F14K50 -Y -DL -O11111114 -fo48 -N"E:\ciro_\Documents\GitHub\ThunderBolt-Nova\mikroBasic\PWM_ADC\PWM_ADC.mbppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroBasic PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroBasic PRO for PIC\uses\P18\" -SP"E:\ciro_\Documents\GitHub\ThunderBolt-Nova\mikroBasic\PWM_ADC\" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_CType.mcl" "__Lib_String.mcl" "__Lib_CStdlib.mcl" "__Lib_MemManager.mcl" "__Lib_Conversions.mcl" "__Lib_Time.mcl" "__Lib_Trigon.mcl" "__Lib_Trigonometry.mcl" "__Lib_Button.mcl" "__Lib_Keypad4x4.mcl" "__Lib_Manchester.mcl" "__Lib_OneWire.mcl" "__Lib_PS2.mcl" "__Lib_Sound.mcl" "__Lib_SoftI2C.mcl" "__Lib_SoftSPI.mcl" "__Lib_SoftUART.mcl" "__Lib_ADC_1xK50.mcl" "__Lib_EEPROM_256.mcl" "__Lib_FLASH_w16_e64.mcl" "__Lib_I2C_b46.mcl" "__Lib_PWM_c5.mcl" "__Lib_SPI_b46c7.mcl" "__Lib_UART_b57.mcl" "__Lib_USB_genHID_P18K50.mcl" "__Lib_PortExpander.mcl" "__Lib_CANSPI.mcl" "__Lib_CF.mcl" "__Lib_CFFat16.mcl" "__Lib_GlcdFonts.mcl" "__Lib_Glcd.mcl" "__Lib_LcdConsts.mcl" "__Lib_Lcd.mcl" "__Lib_Mmc.mcl" "__Lib_MmcFat16.mcl" "__Lib_MmcFat16_Defs.mcl" "__Lib_RS485.mcl" "__Lib_S1D13700.mcl" "__Lib_T6963C.mcl" "__Lib_T6963C_Consts.mcl" "__Lib_SPIGlcd.mcl" "__Lib_SPILcd.mcl" "__Lib_SPILcd8.mcl" "__Lib_SPIT6963C.mcl" "__Lib_SPIT6963C_Const.mcl" "__Lib_EthEnc28j60.mcl" "__Lib_TFT.mcl" "__Lib_TFT_Defs.mcl" "__Lib_TouchPanel_TFT.mcl" "__Lib_EthEnc24j600.mcl" "__Lib_STMPE610.mcl" "__Lib_TouchPanel.mcl" "PWM_ADC.mbas"	 
+diagnostics: 0	155	Available RAM: 747 [bytes], Available ROM: 16384 [bytes]	 
+diagnostics: 0	133	Compilation Started	E:\ciro_\Documents\GitHub\ThunderBolt-Nova\mikroBasic\PWM_ADC\PWM_ADC.mbas
+hint: 1	1015	Hint: Compiling unit "E:\ciro_\Documents\GitHub\ThunderBolt-Nova\mikroBasic\PWM_ADC\PWM_ADC.mbas"	PWM_ADC.mbas
+hint: 27	1010	Hint: Unit "PWM_ADC.mbas" has been recompiled	PWM_ADC.mbas
+diagnostics: 0	134	Compiled Successfully	E:\ciro_\Documents\GitHub\ThunderBolt-Nova\mikroBasic\PWM_ADC\PWM_ADC.mbas
+diagnostics: 0	139	All files Compiled in 125 ms	 
+hint: 0	1144	Used RAM (bytes): 58 (8%)  Free RAM (bytes): 689 (92%)	Used RAM (bytes): 58 (8%)  Free RAM (bytes): 689 (92%)
+hint: 0	1144	Used ROM (bytes): 520 (3%)  Free ROM (bytes): 15864 (97%)	Used ROM (bytes): 520 (3%)  Free ROM (bytes): 15864 (97%)
+diagnostics: 0	145	Project Linked Successfully	PWM_ADC.mbppi
+diagnostics: 0	140	Linked in 329 ms	 
+diagnostics: 0	141	Project 'PWM_ADC.mbppi' completed: 2063 ms	 
+diagnostics: 0	103	Finished successfully: 19 may. 2017, 13:25:22	PWM_ADC.mbppi

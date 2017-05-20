@@ -1,0 +1,49 @@
+program ServoADC
+
+symbol ServoPin = LATC.5
+ 
+' Declarations section 
+sub procedure servo(dim angulo as word)
+dim i as byte
+if angulo <= 0 then
+angulo = 0
+end if
+
+if angulo >= 180 then
+angulo = 180
+end if
+
+ServoPin = 1
+
+delay_us(600)
+
+for i = 0 to angulo step 1
+delay_us(8)
+next i
+
+ServoPin = 0
+
+end sub
+
+dim x as word
+
+main:
+org 0x1000
+orgall(0x1000)
+
+TRISB.4 = 1
+TRISC.5 = 0
+ADC_Init_Advanced(_ADC_INTERNAL_REF)
+
+loop:
+x = ADC_Get_Sample(10)
+x = x>>2
+servo(x)
+delay_ms(20)
+
+if porta.3 = 0 then
+asm goto 0x30 end asm
+end if
+
+goto loop
+end.

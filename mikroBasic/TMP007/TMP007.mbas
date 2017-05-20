@@ -1,0 +1,64 @@
+program TMP007
+
+const TMP007_I2C_ADDR as byte = 0x80                               ' TMP007 I2C address (ADD0 and ADD1 pins are connected to ground)
+dim Temperature_read as byte
+
+
+
+sub function Get_Object_Temperature()as float
+  dim tmp_data as string [2]
+  dim TemperatureSum as integer
+  dim Temperature as float
+
+  I2C1_Start()                                               ' Issue I2C start signal
+  I2C1_Wr(TMP007_I2C_ADDR)                                   ' Send Slave Address Byte
+  I2C1_Wr(0x03)                                              ' Pointer Register Byte
+  I2C1_Repeated_Start()                                      ' Issue I2C signal repeated start
+  I2C1_Wr(TMP007_I2C_ADDR+1)                                 ' Slave Address Byte incremented for one address
+  tmp_data[0] = I2C1_Rd(1)                                   ' Read High value from register address (0x03) and store it in tmp_data and send
+                                                             ' acknowledge bit to enable reading second byte from the same reg
+  tmp_data[1] = I2C1_Rd(_I2C_NACK)                           ' Read Low value from register address (0x03)
+  I2C1_Stop()                                                ' Issue I2C stop signal
+
+  TemperatureSum = ((tmp_data[0] << 8) or tmp_data[1]) >> 2  ' Justify temperature values
+
+  if(TemperatureSum and (1 << 13)) then                      ' Test negative bit
+    TemperatureSum = TemperatureSum or 0xE000                ' Set bits 11 to 15 to logic 1 to get this reading into real two complement
+  end if
+
+  Temperature = TemperatureSum * 0.03125                     ' Multiply temperature value with 0.03125 (value per bit)
+
+  result = Temperature
+
+end sub
+
+main:
+  org 0x1000
+  orgall (0x1000)
+  TRISB.7 = 0
+  TRISB.5 = 1
+  TRISB.4 = 0
+  TRISB.6 = 0
+
+
+  I2C1_Init(100000)
+  UART1_Init(9600)
+  delay_ms(200)
+
+  UART1_write_text("Demo TMP007")
+  UART1_Write(10)                      ' Line Feed
+  UART1_Write(13)                      ' Carriage Return
+
+
+  loop:
+    Temperature_read = Get_Object_Temperature()              ' Store temperature value in Temperature_read
+    UART1_write(Temperature_read)
+    UART1_Write(10)                      ' Line Feed
+    UART1_Write(13)                      ' Carriage Return
+
+    delay_ms(1010)
+    if porta.3 = 0 then
+    asm goto 0x30 end asm
+    end if
+  goto loop
+end.

@@ -1,0 +1,27 @@
+program PWM_ADC
+
+
+dim x as word
+
+main:
+org 0x1000
+orgall(0x1000)
+
+TRISB.4 = 1
+TRISC.5 = 0
+ADC_Init_Advanced(_ADC_INTERNAL_REF)
+PWM1_Init(5000)
+PWM1_Start()
+
+loop:
+x = ADC_Get_Sample(10)
+x = x>>2
+PWM1_Set_Duty(x)
+delay_ms(20)
+
+if porta.3 = 0 then
+asm goto 0x30 end asm
+end if
+
+goto loop
+end.

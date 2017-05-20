@@ -6,17 +6,52 @@ main:
 org 0x1000
 orgall(0x1000)
 
-TRISB.7 = 0
+'TRISB.7 = 0
+TRISB = %00000000
+TRISC = %00000000
 
 
 
 loop:
-PORTB.7 = 1
-delay_ms(1000)
-PORTB.7 = 0
-delay_ms(1000)
-if porta.3 = 0 then
-asm goto 0x30 end asm
-end if
+'PORTB.7 = 1
+'delay_ms(1000)
+'PORTB.7 = 0
+'delay_ms(1000)
+latc.3 = 1
+gosub wait
+latc.6 = 1
+gosub wait
+latc.7 = 1
+gosub wait
+latb.7 = 1
+gosub wait
+latb.5 = 1
+gosub wait
+latb.6 = 1
+gosub wait
+latb.4 = 1
+gosub wait
+latc.5 = 1
+gosub wait
+latc.4 = 1
+gosub wait
+latc.2 = 1
+gosub wait
+latc.1 = 1
+gosub wait
+latc.0 = 1
+gosub wait
 goto loop
+
+wait:
+'if porta.3 = 0 then
+'asm goto 0x30 end asm
+'end if
+
+delay_ms(500)
+latc = %00000000
+latb = %00000000
+delay_ms(500)
+
+return
 end.

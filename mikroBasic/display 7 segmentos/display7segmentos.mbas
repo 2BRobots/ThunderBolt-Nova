@@ -1,0 +1,44 @@
+program display7segmentos
+dim i as char
+
+sub procedure display(dim num as char)
+select case num
+case "0"
+latc = %00111111
+case "1"
+latc = %00000110
+case "2"
+latc = %01011011
+case "3"
+latc = %01001111
+case "4"
+latc = %01100110
+case "5"
+latc = %01101101
+case "6"
+latc = %01111101
+case "7"
+latc = %00000111
+case "8"
+latc = %01111111
+case "9"
+latc = %01101111
+end select
+end sub
+
+main:
+org 0x1000
+orgall (0x1000)
+UART1_init(9600)
+anselh.3 = 0
+TRISB.5 = 1
+TRISB.7 = 0
+TRISC = %00000000
+LATC = %00000000
+loop:
+if (UART1_data_ready() <> 0) then
+i = UART1_read()
+display(i)
+end if
+goto loop
+end.

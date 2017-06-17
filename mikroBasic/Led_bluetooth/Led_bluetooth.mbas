@@ -1,0 +1,39 @@
+program Led_bluetooth
+
+' Declarations section 
+
+ dim recibido as char
+
+main:'   Main program
+org 0x1000
+orgall (0x1000)
+
+ANSELH.3 = 0
+TRISB.5 = 1
+TRISB.7 = 0
+TRISB.4 = 1
+
+UART1_Init(9600)
+
+UART1_Write_Text("Ejemplo bluetooth")
+UART1_Write(10)
+UART1_Write(13)
+
+loop:
+if PORTA.3 = 0 then
+UART1_Write_Text("Hola")
+UART1_Write(10)
+UART1_Write(13)
+while(PORTA.3 = 0)
+wend
+end if
+
+if (UART1_Data_Ready() <> 0) then
+recibido = UART1_Read()
+uart1_write(recibido)
+end if
+
+
+goto loop
+
+end.

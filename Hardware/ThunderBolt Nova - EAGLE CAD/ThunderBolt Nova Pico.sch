@@ -702,13 +702,13 @@ JST PH 2-pin thru-home side entry</description>
 <rectangle x1="-0.15" y1="0.6" x2="0.15" y2="0.8" layer="51"/>
 </package>
 <package name="SOD-123">
-<wire x1="-1" y1="0.7" x2="1" y2="0.7" width="0.1524" layer="51"/>
-<wire x1="1" y1="0.7" x2="1" y2="-0.7" width="0.1524" layer="51"/>
-<wire x1="1" y1="-0.7" x2="-1" y2="-0.7" width="0.1524" layer="51"/>
-<wire x1="-1" y1="-0.7" x2="-1" y2="0.7" width="0.1524" layer="51"/>
-<wire x1="-0.5" y1="0" x2="0.1" y2="0.4" width="0.1524" layer="51"/>
-<wire x1="0.1" y1="0.4" x2="0.1" y2="-0.4" width="0.1524" layer="51"/>
-<wire x1="0.1" y1="-0.4" x2="-0.5" y2="0" width="0.1524" layer="51"/>
+<wire x1="-1" y1="0.7" x2="1" y2="0.7" width="0.1524" layer="21"/>
+<wire x1="1" y1="0.7" x2="1" y2="-0.7" width="0.1524" layer="21"/>
+<wire x1="1" y1="-0.7" x2="-1" y2="-0.7" width="0.1524" layer="21"/>
+<wire x1="-1" y1="-0.7" x2="-1" y2="0.7" width="0.1524" layer="21"/>
+<wire x1="-0.5" y1="0" x2="0.1" y2="0.4" width="0.1524" layer="21"/>
+<wire x1="0.1" y1="0.4" x2="0.1" y2="-0.4" width="0.1524" layer="21"/>
+<wire x1="0.1" y1="-0.4" x2="-0.5" y2="0" width="0.1524" layer="21"/>
 <wire x1="-1.778" y1="0.762" x2="1.778" y2="0.762" width="0.127" layer="21"/>
 <wire x1="1.778" y1="0.762" x2="1.778" y2="-0.762" width="0.127" layer="21"/>
 <wire x1="1.778" y1="-0.762" x2="-1.778" y2="-0.762" width="0.127" layer="21"/>
@@ -717,7 +717,7 @@ JST PH 2-pin thru-home side entry</description>
 <smd name="A" x="1.85" y="0" dx="1.2" dy="0.7" layer="1"/>
 <text x="-1.1" y="1" size="0.4064" layer="25">&gt;NAME</text>
 <text x="-1.1" y="-1.284" size="0.4064" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.7" y1="-0.7" x2="-0.5" y2="0.7" layer="51"/>
+<rectangle x1="-0.7" y1="-0.7" x2="-0.5" y2="0.7" layer="21"/>
 </package>
 <package name="SOD-323F">
 <wire x1="-0.85" y1="0.65" x2="0.85" y2="0.65" width="0.127" layer="21"/>
@@ -4681,6 +4681,21 @@ Metric Code Size 5664</description>
 <rectangle x1="-2.8" y1="-3.15" x2="-2.2" y2="3.15" layer="51"/>
 <rectangle x1="2.2" y1="-3.15" x2="2.8" y2="3.15" layer="51"/>
 </package>
+<package name="FIDUCIAL_1MM">
+<smd name="1" x="0" y="0" dx="1" dy="1" layer="1" roundness="100" stop="no" cream="no"/>
+<polygon width="0.127" layer="29">
+<vertex x="-1" y="0" curve="90"/>
+<vertex x="0" y="-1" curve="90"/>
+<vertex x="1" y="0" curve="90"/>
+<vertex x="0" y="1" curve="90"/>
+</polygon>
+<polygon width="0.127" layer="41">
+<vertex x="-1" y="0" curve="90"/>
+<vertex x="0" y="-1" curve="90"/>
+<vertex x="1" y="0" curve="90"/>
+<vertex x="0" y="1" curve="90"/>
+</polygon>
+</package>
 </packages>
 <symbols>
 <symbol name="PINHD2">
@@ -4782,6 +4797,9 @@ Metric Code Size 5664</description>
 <text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
 <pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+</symbol>
+<symbol name="DOT">
+<circle x="0" y="0" radius="2.54" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -6710,6 +6728,20 @@ http://www.ladyada.net/library/pcb/eaglelibrary.html</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="FIDUCIAL">
+<description>For use by pick and place machines to calibrate the vision/machine, 1mm
+&lt;p&gt;By microbuilder.eu&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="DOT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FIDUCIAL_1MM">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="ICSP_POGO">
@@ -7672,6 +7704,39 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="2brobots">
+<packages>
+<package name="PADSMD">
+<smd name="P$1" x="0" y="0" dx="2" dy="3" layer="16" rot="R180"/>
+</package>
+</packages>
+<symbols>
+<symbol name="PADSMD">
+<pin name="P$1" x="-5.08" y="0" length="middle"/>
+<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="0" y2="2.54" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PADSMD">
+<gates>
+<gate name="G$1" symbol="PADSMD" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="PADSMD">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7715,6 +7780,10 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <part name="R6" library="adafruit" deviceset="R-US_" device="R0805" value="100k"/>
 <part name="R7" library="adafruit" deviceset="R-US_" device="R0805" value="100k"/>
 <part name="C7" library="adafruit" deviceset="C-US" device="C0603K" value="0.1uF"/>
+<part name="U$3" library="2brobots" deviceset="PADSMD" device=""/>
+<part name="U$4" library="2brobots" deviceset="PADSMD" device=""/>
+<part name="U$8" library="adafruit" deviceset="FIDUCIAL" device=""/>
+<part name="U$9" library="adafruit" deviceset="FIDUCIAL" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7759,6 +7828,10 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <instance part="R6" gate="G$1" x="142.24" y="106.68" rot="R90"/>
 <instance part="R7" gate="G$1" x="142.24" y="91.44" rot="R90"/>
 <instance part="C7" gate="G$1" x="68.58" y="58.42"/>
+<instance part="U$3" gate="G$1" x="132.08" y="5.08"/>
+<instance part="U$4" gate="G$1" x="129.54" y="17.78"/>
+<instance part="U$8" gate="G$1" x="7.62" y="5.08"/>
+<instance part="U$9" gate="G$1" x="15.24" y="5.08"/>
 </instances>
 <busses>
 </busses>
@@ -7895,8 +7968,12 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <label x="116.84" y="2.54" size="1.778" layer="95"/>
 <pinref part="CN1" gate="G$1" pin="1"/>
 <wire x1="139.7" y1="12.7" x2="139.7" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="7.62" x2="119.38" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="7.62" x2="127" y2="7.62" width="0.1524" layer="91"/>
 <junction x="119.38" y="7.62"/>
+<pinref part="U$3" gate="G$1" pin="P$1"/>
+<wire x1="127" y1="7.62" x2="119.38" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="127" y1="5.08" x2="127" y2="7.62" width="0.1524" layer="91"/>
+<junction x="127" y="7.62"/>
 </segment>
 <segment>
 <pinref part="SW1" gate="G$1" pin="S"/>
@@ -7951,6 +8028,22 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <wire x1="233.68" y1="66.04" x2="215.9" y2="66.04" width="0.1524" layer="91"/>
 <junction x="215.9" y="66.04"/>
 <label x="208.28" y="66.04" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="78.74" y1="53.34" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="U1" gate="A" pin="GND"/>
+<wire x1="78.74" y1="50.8" x2="106.68" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="137.16" y1="55.88" x2="137.16" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="40.64" x2="106.68" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="40.64" x2="106.68" y2="50.8" width="0.1524" layer="91"/>
+<junction x="106.68" y="50.8"/>
+<pinref part="C7" gate="G$1" pin="2"/>
+<wire x1="68.58" y1="53.34" x2="68.58" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="50.8" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
+<junction x="78.74" y="50.8"/>
+<label x="99.06" y="48.26" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RA3" class="0">
@@ -8070,23 +8163,6 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <label x="208.28" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="C5" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="53.34" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="U1" gate="A" pin="GND"/>
-<wire x1="78.74" y1="50.8" x2="106.68" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="137.16" y1="55.88" x2="137.16" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="137.16" y1="40.64" x2="106.68" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="40.64" x2="106.68" y2="50.8" width="0.1524" layer="91"/>
-<junction x="106.68" y="50.8"/>
-<pinref part="C7" gate="G$1" pin="2"/>
-<wire x1="68.58" y1="53.34" x2="68.58" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="50.8" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
-<junction x="78.74" y="50.8"/>
-</segment>
-</net>
 <net name="VBAT" class="0">
 <segment>
 <pinref part="D2" gate="G$1" pin="A"/>
@@ -8105,8 +8181,12 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <label x="129.54" y="25.4" size="1.778" layer="95"/>
 <junction x="119.38" y="22.86"/>
 <pinref part="CN1" gate="G$1" pin="2"/>
-<wire x1="119.38" y1="22.86" x2="139.7" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="22.86" x2="124.46" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="22.86" x2="139.7" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="22.86" x2="139.7" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="P$1"/>
+<wire x1="124.46" y1="17.78" x2="124.46" y2="22.86" width="0.1524" layer="91"/>
+<junction x="124.46" y="22.86"/>
 </segment>
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>

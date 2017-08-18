@@ -1,0 +1,1 @@
+This is experimental, it may not work at all. We strongly recomend to use mikroC or mikroBasic unless you have the knowledge to program in MPLAB.

@@ -1,4 +1,0 @@
-main
-	UART1_Init
-	UART_Write
-		____DoIFC

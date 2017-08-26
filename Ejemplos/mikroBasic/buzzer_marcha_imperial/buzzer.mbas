@@ -1,0 +1,122 @@
+program buzzer
+
+' Declarations section 
+symbol c = 261
+symbol d = 294
+symbol e = 329
+symbol f = 349
+symbol g = 391
+symbol gS = 415
+symbol a = 440
+symbol aS2 = 455
+symbol b = 466
+symbol cH = 523
+symbol cSH = 554
+symbol dH = 587
+symbol dSH = 622
+symbol eH = 659
+symbol fH = 698
+symbol fSH = 740
+symbol gH = 784
+symbol gSH = 830
+symbol aH = 880
+
+main: 
+org 0x1000
+orgall(0x1000)
+TRISC.3 = 0
+Sound_Init(LATC,3)
+
+loop:
+
+    Sound_play(a, 500)
+    Sound_play(a, 500)
+    Sound_play(a, 500)
+    Sound_play(f, 350)
+    Sound_play(cH, 150)
+    Sound_play(a, 500)
+    Sound_play(f, 350)
+    Sound_play(cH, 150)
+    Sound_play(a, 650)
+
+    delay_ms(150)
+
+    Sound_play(eH, 500)
+    Sound_play(eH, 500)
+    Sound_play(eH, 500)
+    Sound_play(fH, 350)
+    Sound_play(cH, 150)
+    Sound_play(gS, 500)
+    Sound_play(f, 350)
+    Sound_play(cH, 150)
+    Sound_play(a, 650)
+
+    delay_ms(150)
+
+    Sound_play(aH, 500)
+    Sound_play(a, 300)
+    Sound_play(a, 150)
+    Sound_play(aH, 400)
+    Sound_play(gSH, 200)
+    Sound_play(gH, 200)
+    Sound_play(fSH, 125)
+    Sound_play(fH, 125)
+    Sound_play(fSH, 250)
+
+    delay_ms(250)
+
+    Sound_play(aS2, 250)
+    Sound_play(dSH, 400)
+    Sound_play(dH, 200)
+    Sound_play(cSH, 200)
+    Sound_play(cH, 125)
+    Sound_play(b, 125)
+    Sound_play(cH, 250)
+
+    delay_ms(250)
+
+    Sound_play(f, 125)
+    Sound_play(gS, 500)
+    Sound_play(f, 375)
+    Sound_play(a, 125)
+    Sound_play(cH, 500)
+    Sound_play(a, 375)
+    Sound_play(cH, 125)
+    Sound_play(eH, 650)
+
+
+    Sound_play(aH, 500)
+    Sound_play(a, 300)
+    Sound_play(a, 150)
+    Sound_play(aH, 400)
+    Sound_play(gSH, 200)
+    Sound_play(gH, 200)
+    Sound_play(fSH, 125)
+    Sound_play(fH, 125)
+    Sound_play(fSH, 250)
+
+    delay_ms(250)
+
+    Sound_play(aS2, 250)
+    Sound_play(dSH, 400)
+    Sound_play(dH, 200)
+    Sound_play(cSH, 200)
+    Sound_play(cH, 125)
+    Sound_play(b, 125)
+    Sound_play(cH, 250)
+
+    delay_ms(250)
+
+    Sound_play(f, 250)
+    Sound_play(gS, 500)
+    Sound_play(f, 375)
+    Sound_play(cH, 125)
+    Sound_play(a, 500)
+    Sound_play(f, 375)
+    Sound_play(cH, 125)
+    Sound_play(a, 650)
+    
+    delay_ms(2000)
+    
+goto loop
+end.
